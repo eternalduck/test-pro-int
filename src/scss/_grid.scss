@@ -1,0 +1,20 @@
+// March, 2021
+// It's a simple custom grid
+@import "vars-mixins";
+
+// Mobile-first
+// Big Mobile - SM: min-width: 576
+// Tablet - MD: min-width: 750
+// Small Desk - LG: min-width: 992
+// Desk - XL: min-width: 1200
+
+.grid-container {
+	width: 100%;
+	position: relative;
+	overflow-y: hidden;
+}
+
+.grid-content {
+	@include centered;
+	@include content-width;
+}

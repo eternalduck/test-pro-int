@@ -1,0 +1,71 @@
+// March, 2021
+@import "debug";
+@import "reset";
+@import "vars-mixins";
+@import "grid";
+@import "fonts";
+// see pages includes at bottom
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+	color: $almost-black;
+}
+
+//================
+// Typography
+//================
+b, strong {
+	font-weight: 600;//semi-bold
+}
+h1, h2, h3, h4 {
+	font-family: 'Montserrat', sans-serif;
+	//font-weight: 700;//bold
+	font-weight: 900;//black
+}
+h1 {
+	font-size: 230%;
+	margin-bottom: 20px;
+}
+h2 {
+	font-size: 190%;
+	margin-bottom: 18px;
+}
+h3 {
+	font-size: 160%;
+	margin-bottom: 16px;
+}
+h4 {
+	font-size: 130%;
+	margin-bottom: 14px;
+}
+p {
+	font-size: 100%;
+	margin: 0 0 8px;
+}
+//a {
+//
+//}
+
+//.content-width {
+	//@include content-width;
+//}
+
+//================
+// Common elements
+//================
+
+
+
+//================
+// Pages & components includes
+//================
+
+@import "frontpage/frontpage";
+@import "./slider";
+

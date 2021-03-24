@@ -1,0 +1,100 @@
+// March, 2021
+
+//================
+// Brand colors
+//================
+$almost-black: #151D28;
+$blue: #415167;
+$dark-gray: #151D28;
+$light-gray: #EDF0F5;
+$brown: #C7A17A;
+$beige: #F9F5E8;
+
+//================
+// Common elements
+//================
+
+
+
+
+//================
+// Helpers
+//================
+@mixin centered {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin reset-centered {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+//================
+// Grid
+//================
+@mixin sm {
+	@media only screen and (min-width: 576px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media only screen and (min-width: 750px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media only screen and (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media only screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
+}
+
+@mixin content-width {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	min-width: 300px;
+	padding-left: 15px;
+	padding-right: 15px;
+	@include sm {
+		max-width: 540px;
+	}
+	@include md {
+		max-width: 720px;
+	}
+	@include lg {
+		max-width: 960px;
+	}
+	@include xl {
+		max-width: 1140px;
+	}
+}
+@mixin exact-content-width {
+	width: 300px;
+	@include sm {
+		width: 540px;
+	}
+	@include md {
+		width: 720px;
+	}
+	@include lg {
+		width: 960px;
+	}
+	@include xl {
+		width: 1140px;
+	}
+}

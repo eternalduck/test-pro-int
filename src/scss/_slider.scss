@@ -1,0 +1,99 @@
+$slider-width: 500px;
+$slider-height: 400px;
+@mixin slides-offset {
+	left: -100%;
+	@include sm {
+		left: -540px;
+	}
+	@include md {
+		left: -720px;
+	}
+	@include lg {
+		left: -960px;
+	}
+	@include xl {
+		left: -1140px;
+	}
+}
+.slider {
+	background-color: #C7A17A;//
+	@include exact-content-width;
+  //width: $slider-width;
+  height: $slider-height;
+	@include centered;
+	&.loaded {//tmp
+		.slider__slide:nth-child(2),
+		.slider__slide:nth-child(7) { background: #FFCF47 }
+		.slider__slide:nth-child(1),
+		.slider__slide:nth-child(6) { background: #7ADCEF }
+		.slider__slide:nth-child(3) { background: #3CFF96 }
+		.slider__slide:nth-child(4) { background: #a78df5 }
+		.slider__slide:nth-child(5) { background: #ff8686 }
+	}//end tmp
+
+	&__wrapper {
+		outline: 2px solid red;
+		@include exact-content-width;
+		//width: $slider-width;
+		height: $slider-height;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+	}//wrapper
+	&__slides {
+		outline: 2px dashed coral;
+		display: flex;
+		position: relative;
+		top: 0;
+		width: 10000px;
+		@include slides-offset;
+		//left: -$slider-width;
+		&.shifting {
+			transition: left .2s ease-out;
+		}
+
+	}//slides
+	&__slide {
+		background-color: #415167;//
+		//width: $slider-width;
+		@include exact-content-width;
+		height: $slider-height;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		transition: all 1s;
+		position: relative;
+		border-radius: 2px;
+	}//slide
+	&__control {
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top: 50%;
+		margin-top: -20px;
+		z-index: 2;
+		&_prev,
+		&_next {
+			background-size: 22px;
+			background-position: center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		&_prev {
+			background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+			left: 20px;
+		}
+		&_next {
+			background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+			right: 20px;
+		}
+		&_prev:active,
+		&_next:active {
+			transform: scale(.9);
+		}
+	}//control
+}
+
+
+
