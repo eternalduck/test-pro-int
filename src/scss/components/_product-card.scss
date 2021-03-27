@@ -1,0 +1,201 @@
+// Product card
+$max-mob-card-width: 300px;
+.product-card {
+	outline: 1px solid blue;
+	@include shadow;
+	background-color: $almost-white;
+	display: flex;
+
+	&_default {
+		flex-direction: column;
+		width: 100%;
+		max-width: $max-mob-card-width;
+		@include sm {
+			flex-direction: row;
+			max-width: none;
+			width: 500px;
+		}
+		@include md {
+			width: 570px;
+		}
+		@include lg {
+			width: 470px;
+		}
+		@include xl {
+			width: 560px;
+		}
+	}//_default
+	&_vertical {
+		flex-direction: column;
+		width: 100%;
+		max-width: $max-mob-card-width;
+		@include sm {
+			max-width: 360px;
+		}
+		//@include xl {
+		//	max-width: 360px;
+		//}
+	}//_vertical
+	&_big {
+		flex-direction: column;
+		@include lg {
+			flex-direction: row;
+		}
+	}//_big
+
+	&__image {//main point of card's width/height
+		overflow: hidden;
+		width: 100%;
+		max-height: $max-mob-card-width;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		@include md {
+			max-height: none;
+		}
+		img {
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		.product-card_default & {
+			flex: 1 0 230px;
+			@include sm {//becomes horizontal
+				flex: 0 0 220px;
+			}
+			@include lg {
+				flex: 0 0 200px;
+				height: 240px;
+			}
+			@include xl {
+				flex: 0 0 225px;
+				height: 255px;
+			}
+		}//default img
+		.product-card_vertical & {
+			flex: 0 0 300px;
+			@include md {
+				width: 360px;
+			}
+			//@include xl {
+			//	width: 360px;
+			//}
+		}//vertical img
+		.product-card_big & {
+			flex: 0 0 300px;
+			//width: 300px;
+			//height: 282px;
+			@include lg {
+				flex: 0 0 400px;
+			}
+			@include xl {
+				flex: 0 0 490px;
+				//width: 490px;
+				//height: 460px;
+			}
+			img {//override
+				object-fit: contain;
+				width: auto;
+				height: 100%;
+				@include lg {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}//big img
+	}//image
+
+	&__description {
+		flex: 1;
+		padding: 15px;
+		@include md {
+			padding: 30px 35px;
+		}
+		@include lg {
+			padding: 40px 15px;
+		}
+		@include xl {
+			.product-card_default & {
+				padding: 40px 30px 40px 55px;
+			}
+			.product-card_vertical & {
+				padding: 40px 30px 40px 40px;
+			}
+		}
+	}//description
+
+	&__price-container {
+		display: flex;
+		align-content: flex-start;
+	}
+
+	&__price {
+		margin-bottom: 8px;
+		font-size: 20px;
+		font-weight: 600;
+		color: $brown;
+	}
+
+	&__price-old {
+		margin-bottom: 8px;
+		margin-left: 20px;
+		font-size: 14px;
+		line-height: 1.4;
+		font-weight: 300;
+		font-style: italic;
+		text-decoration: line-through;
+		color: $blue;
+	}
+
+	&__title {//h3
+		.product-card_default & {
+			margin-bottom: 25px;
+		}
+		.product-card_vertical & {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__specs {
+		display: flex;
+		margin-top: 25px;
+	}
+	&__specs-item {
+		outline: 1px dotted;
+		flex: 1;
+		display: flex;
+		align-items: center;
+	}
+	&__specs-icon {
+		margin-right: 15px;
+	}
+	&__specs-value {
+		font-weight: 600;
+	}
+
+	&__footer {
+		outline: 1px dotted;
+		margin-top: 32px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__link {
+		color: $blue;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-left: 25px;
+		.product-card_vertical & {
+			margin-left: 62px;
+		}
+		.product-card_big & {
+			margin-left: 120px;
+		}
+	}
+
+	&__specs {
+
+	}
+
+}//product-card

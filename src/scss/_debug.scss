@@ -1,6 +1,6 @@
 // March, 2021
 @import "vars-mixins";
-.grid-content {
+.content-width {
 	outline: 1px dashed magenta;
 }
 header, footer {
@@ -33,20 +33,23 @@ body:before {
 		content: "md - min-width: 750px";
 		color: blue;
 	}
-
 }
 @include lg {
 	body:before {
 		content: "lg - min-width: 992px";
 		color: lime;
 	}
-
 }
 @include xl {
 	body:before {
 		content: "xl - min-width: 1200px";
 		color: red;
 	}
-
+}
+@include xxl {
+	body:before {
+		content: "xxl - min-width: 1600px";
+		color: green;
+	}
 }
 

@@ -7,14 +7,16 @@
 // Tablet - MD: min-width: 750
 // Small Desk - LG: min-width: 992
 // Desk - XL: min-width: 1200
+// Big Desk - XXL: min-width: 1600
 
-.grid-container {
+.container {
 	width: 100%;
 	position: relative;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
-.grid-content {
+.content-width {
+	height: 100%;
 	@include centered;
 	@include content-width;
 }

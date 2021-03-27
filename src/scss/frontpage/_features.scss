@@ -1,0 +1,42 @@
+.features {
+	@include section-padding;
+	&__title {
+		margin-bottom: 45px;
+		@include lg {
+			margin-bottom: 90px;
+		}
+	}
+	&__items-container {
+		padding-left: 20px;
+		padding-right: 20px;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: center;
+		@include md {
+			justify-content: space-between;
+		}
+	}
+	&__item {
+		text-align: center;
+		flex: 0 0 90%;
+		margin-bottom: 30px;
+		@include md {
+			flex: 0 0 45%;
+		}
+		@include lg {
+			flex: 0 0 20%;
+			margin-bottom: 0;
+		}
+		img {
+			width: 60px;
+			height: 60px;
+			margin-bottom: 20px;
+			@include md {
+				width: 80px;
+				height: 80px;
+				margin-bottom: 35px;
+			}
+		}
+
+	}
+}

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-	@@include("components/head.html", {"title": "Your Personalized Coffee"})
+	@@include("components/head.html", {"title": "Revo &mdash; Your Personalized Coffee"})
 </head>
-<body class="front-page">
-	@@include("components/front-page/front-intro.html")
-	@@include("components/front-page/front-features.html")
-	@@include("components/front-page/front-goods.html")
-	@@include("components/front-page/front-giftset.html")
-	@@include("components/front-page/front-combo.html")
+<body class="frontpage">
+	@@include("components/header.html")
+
+	@@include("components/frontpage/intro.html")
+	@@include("components/frontpage/features.html")
+	@@include("components/frontpage/coffee.html")
+	@@include("components/frontpage/giftset.html")
+	@@include("components/frontpage/combo.html")
 
 	@@include("components/footer.html")
 </body>

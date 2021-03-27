@@ -1,66 +1,462 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
 	<meta charset="UTF-8">
-<title>Your Personalized Coffee</title>
+<title>Revo &mdash; Your Personalized Coffee</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/main.css">
+<meta name="description" content="Vietnamese Coffee Shop">
 <link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="libs/splide-2.4.21/css/splide-core.min.css">
 
 </head>
-<body class="front-page">
-	<div class="front-intro grid-container">
-	<div class="grid-content">
-		intro
+<body class="frontpage">
+	<header class="header">
+	<div class="header__inner content-width">
+		<div class="header__logo">
+			<img class="logo" src="images/revo_logo.png" alt="Revo"/>
+		</div>
+		<div class="header__cart">
+			<div class="cart">
+				<span class="cart__counter">2</span>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<section class="intro container">
+	<div class="intro__play"></div>
+	<div class="intro__title-container">
+		<div class="content-width">
+			<h1 class="intro__title">
+				Your<span class="intro__title_selected">PERSONALIZED</span>COFFEE
+			</h1>
+		</div>
+	</div>
+	<div class="intro__bg-blank"></div>
+	<div class="intro__bg"></div>
+	<div class="intro__menu-container">
+		<nav class="menu">
+	<ul class="menu__list">
+		<li class="menu__item menu__item_current"><a href="/">TRANG CHỦ</a></li>
+		<li class="menu__item"><a href="#features">Coffee</a></li>
+		<li class="menu__item"><a href="#colored-filters">PHIN MẠ MÀU</a></li>
+		<li class="menu__item"><a href="#combo">COMBO PHIN PHÊ</a></li>
+		<li class="menu__item"><a href="#giftset">GIFTSET</a></li>
+		<li class="menu__item"><a href="#contact">LIÊN HỆ</a></li>
+	</ul>
+</nav>
+
+	</div>
+</section>
+
+	<section class="features container">
+	<div class="content-width">
+		<p class="subtitle">Your Personalized Coffee</p>
+		<h2 class="features__title">COFFEE BUILD YOUR BASE</h2>
+		<div class="features__items-container">
+			<div class="features__item">
+	<img src="images/features-01.svg" alt="Nguồn gốc"/>
+	<h3>Nguồn gốc</h3>
+	<p>Những hạt cà phê Arabica, Robusta đạt chất lượng theo tiêu chuẩn quốc tế.</p>
+</div>
+
+			<div class="features__item">
+	<img src="images/features-02.svg" alt="Chất lượng"/>
+	<h3>Chất lượng</h3>
+	<p>Từng một hạt cà phê là cả một quá trình tập trung cao độ của nghệ nhân cà phê.</p>
+</div>
+
+			<div class="features__item">
+	<img src="images/features-03.svg" alt="Các loại hạt"/>
+	<h3>Các loại hạt</h3>
+	<p>70% chất lượng tách cà phê đến từ nguồn gốc và chất lượng green bean.</p>
+</div>
+
+			<div class="features__item">
+	<img src="images/features-04.svg" alt="Pha chế"/>
+	<h3>Pha chế</h3>
+	<p>Những hạt cà phê được lột xác qua quá trình rang xay kỹ lưỡng và nghiêm ngặt.</p>
+</div>
+
+		</div>
+
+	</div>
+</section>
+
+	<section class="coffee container">
+	<div class="content-width">
+		<p class="subtitle">Choose Your Favorite</p>
+		<h2 class="coffee__title">CHUẨN GU ĐÚNG VỊ</h2>
+	</div>
+
+	<div class="coffee__slider-container">
+		<div id="coffee-slider" class="splide">
+			<div class="splide__track">
+				<ul class="splide__list">
+					<li class="coffee__slide splide__slide">
+						<div class="coffee__slide__inner">
+						<div class="coffee__card product-card product-card_default">
+	<figure class="product-card__image">
+		<img src="images/products/coffee/product-revo-morning.png" alt="REVO Morning"/>
+	</figure>
+	<div class="product-card__description">
+		<p class="product-card__price">99.000</p>
+		<h3 class="product-card__title">REVO Morning</h3>
+		<p>đắng, hậu ngọt, hương hoa </p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
 	</div>
 </div>
 
-	<div class="front-features grid-container">
-	<div class="grid-content">
-		features
+						<div class="coffee__card product-card product-card_default">
+	<figure class="product-card__image">
+		<img src="images/products/coffee/product-revo-origin.png" alt="REVO Origin"/>
+	</figure>
+	<div class="product-card__description">
+		<p class="product-card__price">139.000</p>
+		<h3 class="product-card__title">REVO Origin</h3>
+		<p>hậu ngọt, ít đắng, vị chua dâu</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
 	</div>
 </div>
 
-	<div class="front-goods grid-container">
-	<div class="grid-content">
-		<h1>slider test</h1>
-	</div>
-	<div class="slider-wrap">
-
-	<div id="slider" class="slider">
-		<div class="slider__wrapper grid-content">
-			<div id="slides" class="slider__slides">
-				<div class="slider__slide"></div>
-				<div class="slider__slide"></div>
-				<div class="slider__slide"></div>
-				<div class="slider__slide"></div>
-				<div class="slider__slide"></div>
-			</div><!--slides-->
-		</div><!--slider__wrapper-->
-		 <a id="control-prev" class="slider__control slider__control_prev"></a>
-		<a id="control-next" class="slider__control slider__control_next"></a>
-	</div><!--slider-->
-
-	</div><!--slider-wrap-->
-</div>
-
-	<div class="front-giftset grid-container">
-	<div class="grid-content">
-		giftset tabs
+						</div>
+					</li>
+					<li class="coffee__slide splide__slide">
+						<div class="coffee__slide__inner">
+						<div class="coffee__card product-card product-card_default">
+	<figure class="product-card__image">
+		<img src="images/products/coffee/product-revo-everyday.png" alt="REVO Everyday"/>
+	</figure>
+	<div class="product-card__description">
+		<p class="product-card__price">85.000</p>
+		<h3 class="product-card__title">REVO Everyday</h3>
+		<p>cân bằng, hậu đắng, vị chocolate </p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
 	</div>
 </div>
 
-	<div class="front-combo grid-container">
-	<div class="grid-content">
-		combo slider
+						<div class="coffee__card product-card product-card_default">
+	<figure class="product-card__image">
+		<img src="images/products/coffee/product-revo-damda.png" alt="REVO Đậm Đà"/>
+	</figure>
+	<div class="product-card__description">
+		<p class="product-card__price">75.000</p>
+		<h3 class="product-card__title">REVO Đậm Đà</h3>
+		<p>đậm đà, đắng, truyền thống</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
 	</div>
 </div>
 
+						</div>
+					</li>
+					<li class="coffee__slide splide__slide">
+						<div class="coffee__slide__inner">
+						<div class="coffee__card product-card product-card_default">
+	<figure class="product-card__image">
+		<img src="images/products/coffee/product-revo-honey.png" alt="REVO Honey"/>
+	</figure>
+	<div class="product-card__description">
+		<p class="product-card__price">195.000</p>
+		<h3 class="product-card__title">REVO Honey</h3>
+		<p>độ ngọt cao, hậu ngọt, chua họ táo</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+	</div>
+</div>
 
-	<footer class="grid-container">
-	<div class="grid-content">
+						<div class="coffee__card product-card product-card_default">
+	<figure class="product-card__image">
+		<img src="images/products/coffee/product-revo-natural.png" alt="REVO Natural"/>
+	</figure>
+	<div class="product-card__description">
+		<p class="product-card__price">169.000</p>
+		<h3 class="product-card__title">REVO Natural</h3>
+		<p>hậu ngọt, hương hoa, vị chua dâu</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+	</div>
+</div>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<section class="giftset container">
+	<div class="content-width">
+		<p class="subtitle">Best Gift For Best Friend</p>
+		<h2 class="giftset__title">GIFTSET</h2>
+
+		<div class="giftset__tabs-container">
+			<div id="giftset-tabs" class="tabset">
+				<nav class="tabset__controls"></nav>
+				<div class="tabset__tabs">
+
+					<div class="tabset__tab tabset__tab_active">
+						<div class="giftset__card product-card product-card_big">
+	<figure class="product-card__image">
+		<img src="images/products/giftset/product-giftset-vietnam-01.png" alt="Giftset "Cà phê phin Việt Nam""/>
+	</figure>
+
+	<div class="product-card__description">
+		<p class="product-card__price">285.000</p>
+		<h3 class="product-card__title">Giftset "Cà phê phin Việt Nam"</h3>
+		<p>Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu, sự đam mê của người làm cà phê… tạo ra những tách cà phê tinh khiết chỉ dành riêng cho bạn.</p>
+
+		<div class="product-card__specs">
+			<div class="product-card__specs-item">
+				<figure class="product-card__specs-icon">
+					<img src="images/icons/icon-beans.svg" alt="blend"/>
+				</figure>
+				<div class="product-card__specs-txt">
+					<p>Loại hạt</p>
+					<p class="product-card__specs-value">Fine Robusta Blend</p>
+				</div>
+			</div>
+
+			<div class="product-card__specs-item">
+				<figure class="product-card__specs-icon">
+					<img src="images/icons/icon-mountains.svg" alt="region"/>
+				</figure>
+				<div class="product-card__specs-txt">
+					<p>Độ cao</p>
+					<p class="product-card__specs-value">700 - 800m</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+
+	</div>
+
+</div>
+
+					</div>
+					<div class="tabset__tab">
+						<div class="giftset__card product-card product-card_big">
+	<figure class="product-card__image">
+		<img src="images/products/giftset/product-giftset-vietnam-02.png" alt="Giftset "Cà phê phin Việt""/>
+	</figure>
+
+	<div class="product-card__description">
+		<p class="product-card__price">300.000</p>
+		<h3 class="product-card__title">Giftset "Cà phê phin Việt"</h3>
+		<p>Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu, sự đam mê của người làm cà phê… tạo ra những tách cà phê tinh khiết chỉ dành riêng cho bạn.</p>
+
+		<div class="product-card__specs">
+			<div class="product-card__specs-item">
+				<figure class="product-card__specs-icon">
+					<img src="images/icons/icon-beans.svg" alt="blend"/>
+				</figure>
+				<div class="product-card__specs-txt">
+					<p>Loại hạt</p>
+					<p class="product-card__specs-value">Arabica & Robusta Blend</p>
+				</div>
+			</div>
+
+			<div class="product-card__specs-item">
+				<figure class="product-card__specs-icon">
+					<img src="images/icons/icon-mountains.svg" alt="region"/>
+				</figure>
+				<div class="product-card__specs-txt">
+					<p>Độ cao</p>
+					<p class="product-card__specs-value">1000 - 1200m</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+
+	</div>
+
+</div>
+
+					</div>
+					<div class="tabset__tab">
+						<div class="giftset__card product-card product-card_big">
+	<figure class="product-card__image">
+		<img src="images/products/giftset/product-giftset-vietnam-03.png" alt="Giftset "Cà phê phin""/>
+	</figure>
+
+	<div class="product-card__description">
+		<p class="product-card__price">400.000</p>
+		<h3 class="product-card__title">Giftset "Cà phê phin"</h3>
+		<p>Món quà tuyệt vời dành cho người sành cà phê. Hạt cà phê được Revo cẩn trọng chọn lựa, rang xay theo công nghệ và bí quyết học hỏi từ những nghệ nhân nổi tiếng, cùng với tình yêu.</p>
+
+		<div class="product-card__specs">
+			<div class="product-card__specs-item">
+				<figure class="product-card__specs-icon">
+					<img src="images/icons/icon-beans.svg" alt="blend"/>
+				</figure>
+				<div class="product-card__specs-txt">
+					<p>Loại hạt</p>
+					<p class="product-card__specs-value">Fine Arabica Blend</p>
+				</div>
+			</div>
+
+			<div class="product-card__specs-item">
+				<figure class="product-card__specs-icon">
+					<img src="images/icons/icon-mountains.svg" alt="region"/>
+				</figure>
+				<div class="product-card__specs-txt">
+					<p>Độ cao</p>
+					<p class="product-card__specs-value">1800m</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+
+	</div>
+
+</div>
+
+					</div>
+
+
+
+
+				</div><!--tabset__tabs-->
+			</div><!--tabset-->
+
+		</div><!--giftset__tabs-container-->
+
+
+	</div>
+</section>
+
+	<section class="combo container">
+	<div class="content-width">
+		<p class="subtitle">Your Personalized Coffee</p>
+		<h2 class="combo__title">COMBO PHIN PHÊ</h2>
+	</div>
+
+		<div class="combo__slider-container">
+			<div id="combo-slider" class="splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="combo__slide splide__slide">
+							<div class="combo__card product-card product-card_vertical">
+	<figure class="product-card__image">
+		<img src="images/products/combo/product-combo-damda.png" alt="Combo Revo Đậm Đà"/>
+	</figure>
+	<div class="product-card__description">
+		<div class="product-card__price-container">
+			<p class="product-card__price">147.000</p>
+			<p class="product-card__price-old">155.000</p>
+		</div>
+		<h3 class="product-card__title">Combo Revo Đậm Đà</h3>
+		<p>Hàm lượng caffein trong Revo Đậm Đà đủ mạnh để làm bạn tỉnh táo làm việc...</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+	</div>
+</div>
+
+						</li>
+						<li class="combo__slide splide__slide">
+							<div class="combo__card product-card product-card_vertical">
+	<figure class="product-card__image">
+		<img src="images/products/combo/product-combo-everyday.png" alt="Combo Revo Everyday"/>
+	</figure>
+	<div class="product-card__description">
+		<div class="product-card__price-container">
+			<p class="product-card__price">156.000</p>
+			<p class="product-card__price-old">165.000</p>
+		</div>
+		<h3 class="product-card__title">Combo Revo Everyday</h3>
+		<p>Revo Everyday được phối trộn giữa vị đắng của hạt Robusta và hương thơm...</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+	</div>
+</div>
+
+						</li>
+						<li class="combo__slide splide__slide">
+							<div class="combo__card product-card product-card_vertical">
+	<figure class="product-card__image">
+		<img src="images/products/combo/product-combo-honey.png" alt="Combo Revo Honey"/>
+	</figure>
+	<div class="product-card__description">
+		<div class="product-card__price-container">
+			<p class="product-card__price">275.000</p>
+			<p class="product-card__price-old">260.000</p>
+		</div>
+		<h3 class="product-card__title">Combo Revo Honey</h3>
+		<p>Honey &mdash; trong tên gọi Revo Honey đến từ phương pháp chế biến hạt Arabica...</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+	</div>
+</div>
+
+						</li>
+						<li class="combo__slide splide__slide">
+							<div class="combo__card product-card product-card_vertical">
+	<figure class="product-card__image">
+		<img src="images/products/combo/product-combo-natural.png" alt="Combo Revo Natural"/>
+	</figure>
+	<div class="product-card__description">
+		<div class="product-card__price-container">
+			<p class="product-card__price">249.000</p>
+			<p class="product-card__price-old">236.000</p>
+		</div>
+		<h3 class="product-card__title">Combo Revo Natural</h3>
+		<p>Revo Natural là dòng cà phê đặc biệt của Revo Coffee dành riêng ...</p>
+		<div class="product-card__footer">
+			<button class="btn" name="buy">MUA NGAY</button>
+			<a class="product-card__link" href="#details">CHI TIẾT</a>
+		</div>
+	</div>
+</div>
+
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+</section>
+
+
+	<footer class="footer">
+	<div class="content-width">
 		<p>&copy; Revo Coffee Việt Nam &mdash; 2018</p>
 	</div>
+	<script src="libs/splide-2.4.21/js/splide.min.js"></script>
 	<script src="js/main.js"></script>
 </footer>
 

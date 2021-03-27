@@ -1,117 +1,101 @@
-document.addEventListener('DOMContentLoaded', function () {
-	console.info("loaded!")
+// March, 2021
+
+document.addEventListener( "DOMContentLoaded", function () {
+
+	//================
+	// Slider
+	// https://splidejs.com/getting-started/
+	//================
+	new Splide( "#coffee-slider", {
+		type: "loop",
+		pagination: false,
+		perPage: 2,
+		gap: 30,
+		fixedWidth: "560px",
+		breakpoints: {
+			992: {
+				perPage: 1,
+				fixedWidth: "auto",
+			},
+		}
+	}).mount()
+
+	new Splide( "#combo-slider", {
+		type: "loop",
+		pagination: false,
+		perPage: 3,
+		gap: 30,
+		fixedWidth: "360px",
+		breakpoints: {
+			992: {
+				perPage: 2,
+				fixedWidth: "360px",
+			},
+			750: {
+				perPage: 1,
+				fixedWidth: "300px",
+			},
+		}
+	}).mount()
+
+
+	//================
+	// Tabs
+	//================
+	// TODO: needs improvement if we want to add several instances on a page, i.e.
+	// let tabsets = document.querySelectorAll("tabset")
+	// for ( let i = 0, tabsets.length < i; i++ ) {
+	// 	...our processing
+	// }
+
+	let tabset = document.getElementById("giftset-tabs")
+
+	if(tabset) {
+		let tabsContainer = document.querySelector(".tabset__tabs")
+		let tabs = tabsContainer.querySelectorAll(".tabset__tab")
+		let controlsContainer = document.querySelector(".tabset__controls")
+		let controlItemClass = "tabset__controls-item"
+		let controlActiveClass = "tabset__controls-item_active"
+		let tabActiveClass = "tabset__tab_active"
+
+		countTabsAndMakeControls()
+
+		function countTabsAndMakeControls(){
+			tabs.forEach((tab, i) => {
+				// assign data-tab for each tab
+				tab.dataset.tab = i + 1
+				// populate controls based on tabs
+				let tabNumber = document.createElement("div")
+				tabNumber.textContent = i + 1
+				// assign data-link for each tab
+				tabNumber.dataset.link = i + 1
+				tabNumber.classList.add(controlItemClass)
+				controlsContainer.appendChild(tabNumber)
+				// make first one active (TODO: this step needs improvement)
+				document.querySelector(".tabset__controls-item").classList.add(controlActiveClass)
+			})//forEach
+
+			tabsNavigation()
+		}//countTabsAndMakeControls
+
+		function tabsNavigation(){
+			let controlItems = controlsContainer.querySelectorAll(".tabset__controls-item")
+			controlItems.forEach((control, i) => {
+
+				control.addEventListener("click", () => {
+					// clear active class from all controls
+					controlItems.forEach(item => item.classList.remove(controlActiveClass))
+					// add active class to the clicked control
+					control.classList.add(controlActiveClass)
+					// clear active class from all tabs
+					tabs.forEach(tab => tab.classList.remove(tabActiveClass))
+					// add active class to the corresponding tab
+					tabsContainer.querySelector(`.tabset__tab[data-tab='${control.dataset.link}']`).classList.add(tabActiveClass)
+				})//click
+
+			})//forEach
+		}//tabsNavigation
+
+	}//if tabset
+
 })//DOMContentLoaded
-
-//================
-// Slider: https://medium.com/@claudiaconceic/infinite-plain-javascript-slider-click-and-touch-events-540c8bd174f2
-//================
-let slider = document.getElementById('slider')
-let sliderItems = document.getElementById('slides')
-let prev = document.getElementById('control-prev')
-let next = document.getElementById('control-next')
-
-function slide(wrapper, items, prev, next) {
-	let posX1 = 0
-	let posX2 = 0
-	let posInitial
-	let posFinal
-	let threshold = 100
-	let slides = items.getElementsByClassName('slider__slide')
-	let slidesLength = slides.length
-	let slideSize = items.getElementsByClassName('slider__slide')[0].offsetWidth
-	let firstSlide = slides[0]
-	let lastSlide = slides[slidesLength - 1]
-	let cloneFirst = firstSlide.cloneNode(true)
-	let cloneLast = lastSlide.cloneNode(true)
-	let index = 0
-	let allowShift = true
-
-	// Clone first and last slide
-	items.appendChild(cloneFirst);
-	items.insertBefore(cloneLast, firstSlide);
-	wrapper.classList.add('loaded');
-
-	// Mouse events
-	items.onmousedown = dragStart;
-
-	// Touch events
-	items.addEventListener('touchstart', dragStart);
-	items.addEventListener('touchend', dragEnd);
-	items.addEventListener('touchmove', dragAction);
-
-	// Click events
-	prev.addEventListener('click', function () { shiftSlide(-1) });
-	next.addEventListener('click', function () { shiftSlide(1) });
-
-	// Transition events
-	items.addEventListener('transitionend', checkIndex);
-
-	function dragStart (e) {
-		e = e || window.event;
-		e.preventDefault();
-		posInitial = items.offsetLeft;
-		if (e.type == 'touchstart') {
-			posX1 = e.touches[0].clientX;
-		} else {
-			posX1 = e.clientX;
-			document.onmouseup = dragEnd;
-			document.onmousemove = dragAction;
-		}
-	}
-
-	function dragAction (e) {
-		e = e || window.event;
-		if (e.type == 'touchmove') {
-			posX2 = posX1 - e.touches[0].clientX;
-			posX1 = e.touches[0].clientX;
-		} else {
-			posX2 = posX1 - e.clientX;
-			posX1 = e.clientX;
-		}
-		items.style.left = (items.offsetLeft - posX2) + "px";
-	}
-
-	function dragEnd (e) {
-		posFinal = items.offsetLeft;
-		if (posFinal - posInitial < -threshold) {
-			shiftSlide(1, 'drag');
-		} else if (posFinal - posInitial > threshold) {
-			shiftSlide(-1, 'drag');
-		} else {
-			items.style.left = (posInitial) + "px";
-		}
-		document.onmouseup = null;
-		document.onmousemove = null;
-	}
-
-	function shiftSlide(dir, action) {
-		items.classList.add('shifting');
-		if (allowShift) {
-			if (!action) { posInitial = items.offsetLeft; }
-			if (dir == 1) {
-				items.style.left = (posInitial - slideSize) + "px";
-				index++;
-			} else if (dir == -1) {
-				items.style.left = (posInitial + slideSize) + "px";
-				index--;
-			}
-		};
-		allowShift = false;
-	}
-
-	function checkIndex (){
-		items.classList.remove('shifting');
-		if (index == -1) {
-			items.style.left = -(slidesLength * slideSize) + "px";
-			index = slidesLength - 1;
-		}
-		if (index == slidesLength) {
-			items.style.left = -(1 * slideSize) + "px";
-			index = 0;
-		}
-		allowShift = true;
-	}
-
-}
-
-slide(slider, sliderItems, prev, next);

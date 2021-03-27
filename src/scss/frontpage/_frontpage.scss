@@ -1,12 +1,16 @@
-.front-page {
-	background-color: #F9FBFF;
+.frontpage {
+	background-color: $almost-white;
+	h2,
+	.subtitle {
+		text-align: center;
+	}
 }
 
 //================
 // Sections includes
 //================
-@import "front-intro";
-@import "front-features";
-@import "front-goods";
-@import "front-giftset";
-@import "front-combo";
+@import "intro";
+@import "features";
+@import "coffee";
+@import "giftset";
+@import "combo";

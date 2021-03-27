@@ -4,31 +4,13 @@
 // Brand colors
 //================
 $almost-black: #151D28;
+$almost-white: #F9FBFF;
 $blue: #415167;
+$light-blue: #C0C6D0;
 $dark-gray: #151D28;
 $light-gray: #EDF0F5;
 $brown: #C7A17A;
 $beige: #F9F5E8;
-
-//================
-// Common elements
-//================
-
-
-
-
-//================
-// Helpers
-//================
-@mixin centered {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-@mixin reset-centered {
-	margin-right: 0;
-	margin-left: 0;
-}
 
 //================
 // Grid
@@ -56,6 +38,11 @@ $beige: #F9F5E8;
 		@content;
 	}
 }
+@mixin xxl {
+	@media only screen and (min-width: 1600px) {
+		@content;
+	}
+}
 
 @mixin print {
 	@media print {
@@ -72,6 +59,8 @@ $beige: #F9F5E8;
 	padding-right: 15px;
 	@include sm {
 		max-width: 540px;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	@include md {
 		max-width: 720px;
@@ -98,3 +87,90 @@ $beige: #F9F5E8;
 		width: 1140px;
 	}
 }
+
+@mixin content-dependent-margin($side: left) {
+	margin-#{$side}: 15px;
+	@include sm {
+		margin-#{$side}: calc((100% - 540px)/2);
+	}
+	@include md {
+		margin-#{$side}: calc((100% - 720px)/2);
+	}
+	@include lg {
+		margin-#{$side}: calc((100% - 960px)/2);
+	}
+	@include xl {
+		margin-#{$side}: calc((100% - 1140px)/2);
+	}
+}
+
+//================
+// Common elements
+//================
+@mixin shadow{
+	box-shadow: 0 4px 24px rgba(205, 205, 205, 0.5);
+	//filter: drop-shadow(0 4px 24px rgba(205, 205, 205, 0.5));
+}
+@mixin section-padding {
+	padding-top: 50px;
+	padding-bottom: 70px;
+	@include lg {
+		padding-top: 90px;
+		padding-bottom: 130px;
+	}
+}
+@mixin bg-part($clr, $width, $pseudo: before, $side: left, $z: 0) {
+	position: relative;
+	&:#{$pseudo} {
+		display: block;
+		content: "";
+		position: absolute;
+		width: $width;
+		height: 100%;
+		top: 0;
+		#{$side}: 0;
+		background-color: $clr;
+		z-index: $z;
+		max-width: 70px;
+		@include md {
+			max-width: none;
+		}
+	}
+}
+@mixin slider-dim {
+	position: relative;
+	@include md{}
+	&:after {
+		display: block;
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: rgba(255,255,255,.5);
+		z-index: 10;
+		max-width: 70px;
+		@include md {
+			max-width: none;
+		}
+	}
+}
+
+//================
+// Helpers
+//================
+@mixin centered {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin reset-centered {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+@mixin hover-transition {
+	transition: all .2s ease-in;
+}
+

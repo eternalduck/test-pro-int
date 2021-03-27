@@ -1,0 +1,69 @@
+<section class="coffee container">
+	<div class="content-width">
+		<p class="subtitle">Choose Your Favorite</p>
+		<h2 class="coffee__title">CHUẨN GU ĐÚNG VỊ</h2>
+	</div>
+
+	<div class="coffee__slider-container">
+		<div id="coffee-slider" class="splide">
+			<div class="splide__track">
+				<ul class="splide__list">
+					<li class="coffee__slide splide__slide">
+						<div class="coffee__slide__inner">
+						@@include("parts/coffee-product-card.html", {
+							"image": "product-revo-morning.png",
+							"price": "99.000",
+							"title": "REVO Morning",
+							"txt": "đắng, hậu ngọt, hương hoa ",
+							"link": "#details",
+						})
+						@@include("parts/coffee-product-card.html", {
+							"image": "product-revo-origin.png",
+							"price": "139.000",
+							"title": "REVO Origin",
+							"txt": "hậu ngọt, ít đắng, vị chua dâu",
+							"link": "#details",
+						})
+						</div>
+					</li>
+					<li class="coffee__slide splide__slide">
+						<div class="coffee__slide__inner">
+						@@include("parts/coffee-product-card.html", {
+							"image": "product-revo-everyday.png",
+							"price": "85.000",
+							"title": "REVO Everyday",
+							"txt": "cân bằng, hậu đắng, vị chocolate ",
+							"link": "#details",
+						})
+						@@include("parts/coffee-product-card.html", {
+							"image": "product-revo-damda.png",
+							"price": "75.000",
+							"title": "REVO Đậm Đà",
+							"txt": "đậm đà, đắng, truyền thống",
+							"link": "#details",
+						})
+						</div>
+					</li>
+					<li class="coffee__slide splide__slide">
+						<div class="coffee__slide__inner">
+						@@include("parts/coffee-product-card.html", {
+							"image": "product-revo-honey.png",
+							"price": "195.000",
+							"title": "REVO Honey",
+							"txt": "độ ngọt cao, hậu ngọt, chua họ táo",
+							"link": "#details",
+						})
+						@@include("parts/coffee-product-card.html", {
+							"image": "product-revo-natural.png",
+							"price": "169.000",
+							"title": "REVO Natural",
+							"txt": "hậu ngọt, hương hoa, vị chua dâu",
+							"link": "#details",
+						})
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

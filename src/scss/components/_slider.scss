@@ -1,0 +1,47 @@
+// Overrides for Splide slider
+// https://splidejs.com/getting-started/
+.splide__slide {
+	outline: 3px dashed green !important;
+	display: flex;
+	justify-content: center;
+}
+.splide__arrows {
+	z-index: 200;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+}
+.splide__arrow {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	border: none;
+	@include hover-transition;
+	cursor: pointer;
+	@include md {
+		width: 48px;
+		height: 48px;
+	}
+	&:hover {
+		opacity: .9;
+	}
+	svg {display: none}
+	&--prev {
+		display: none;
+		background: $brown url("../images/icons/icon-arrow-left.svg") center/50% no-repeat;
+		left: -40px;
+		@include md {
+			left: -60px;
+		}
+	}
+	&--next {
+		background: $brown url("../images/icons/icon-arrow-right.svg") center/50% no-repeat;
+		right: 20px;
+		@include md {
+			right: 30px;
+		}
+	}
+
+}
