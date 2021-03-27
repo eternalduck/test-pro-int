@@ -1,24 +1,17 @@
 .combo {
+	@include bg-part($blue, 29%, before, right);
 	@include section-padding;
-	@include bg-part($blue, 30%, right);
 	&__title {
-		margin-bottom: 40px;
+		@include title-margin-mob;
 		@include lg {
-			margin-bottom: 65px;
+			margin-bottom: 30px;
 		}
 	}
 	&__slider-container {
-		outline: 2px solid lime;
+		@include slider-dim;
 		@include content-dependent-margin;
 		position: relative;
 		z-index: 50;
-		height: 560px;
-	}//slider
-	&__slide {
-		//outline: 2px solid orange;
-		//width: 390px;
-	}
-	&__card {//product-card
-		//margin-right: 30px;//?
+		height: 600px;
 	}
 }

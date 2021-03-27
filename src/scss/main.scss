@@ -1,10 +1,10 @@
 // March, 2021
-@import "debug";
+//@import "debug";
 @import "reset";
 @import "vars-mixins";
 @import "grid";
 @import "fonts";
-// see pages includes at bottom
+// see pages & parts includes at bottom
 
 html {
 	scroll-behavior: smooth;
@@ -81,10 +81,6 @@ a {
 	}
 }
 
-//.content-width {
-	//@include content-width;
-//}
-
 //================
 // Common elements
 //================
@@ -110,6 +106,9 @@ a {
 	@include hover-transition;
 	&:hover {
 		background-color: darken($brown, 10);
+	}
+	&_big {
+		padding: 10px 40px;
 	}
 }
 

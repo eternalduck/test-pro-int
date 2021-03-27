@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
           }); // add active class to the corresponding tab
 
           tabsContainer.querySelector(".tabset__tab[data-tab='".concat(control.dataset.link, "']")).classList.add(tabActiveClass);
-        }); //click
-      }); //forEach
+        });
+      });
     }; //tabsNavigation
 
 

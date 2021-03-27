@@ -11,7 +11,7 @@
 		display: none;
 		@include lg {
 			display: block;
-			flex: 6;
+			flex: 0 0 32.5%;
 			background-color: $almost-white;
 		}
 	}
@@ -40,7 +40,7 @@
 			flex: 0 0 40%;
 		}
 		@include lg {
-			flex: 5;
+			flex: 1;
 		}
 	}
 

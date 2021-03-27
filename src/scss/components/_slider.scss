@@ -1,7 +1,12 @@
 // Overrides for Splide slider
 // https://splidejs.com/getting-started/
+.splide {
+	margin-left: -$slider-padding;
+}
+.splide__track {
+	padding: $slider-padding;
+}
 .splide__slide {
-	outline: 3px dashed green !important;
 	display: flex;
 	justify-content: center;
 }
@@ -20,6 +25,8 @@
 	border: none;
 	@include hover-transition;
 	cursor: pointer;
+	outline: none;
+	user-select: none;
 	@include md {
 		width: 48px;
 		height: 48px;
@@ -41,6 +48,9 @@
 		right: 20px;
 		@include md {
 			right: 30px;
+		}
+		@include xl {
+			right: 75px;
 		}
 	}
 

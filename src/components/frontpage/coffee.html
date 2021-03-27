@@ -1,4 +1,4 @@
-<section class="coffee container">
+<section id="coffee" class="coffee container">
 	<div class="content-width">
 		<p class="subtitle">Choose Your Favorite</p>
 		<h2 class="coffee__title">CHUẨN GU ĐÚNG VỊ</h2>
@@ -8,8 +8,8 @@
 		<div id="coffee-slider" class="splide">
 			<div class="splide__track">
 				<ul class="splide__list">
-					<li class="coffee__slide splide__slide">
-						<div class="coffee__slide__inner">
+					<li class="splide__slide">
+						<div class="splide__slide-inner">
 						@@include("parts/coffee-product-card.html", {
 							"image": "product-revo-morning.png",
 							"price": "99.000",
@@ -26,8 +26,8 @@
 						})
 						</div>
 					</li>
-					<li class="coffee__slide splide__slide">
-						<div class="coffee__slide__inner">
+					<li class="splide__slide">
+						<div class="splide__slide-inner">
 						@@include("parts/coffee-product-card.html", {
 							"image": "product-revo-everyday.png",
 							"price": "85.000",
@@ -44,8 +44,8 @@
 						})
 						</div>
 					</li>
-					<li class="coffee__slide splide__slide">
-						<div class="coffee__slide__inner">
+					<li class="splide__slide">
+						<div class="splide__slide-inner">
 						@@include("parts/coffee-product-card.html", {
 							"image": "product-revo-honey.png",
 							"price": "195.000",
@@ -66,4 +66,5 @@
 			</div>
 		</div>
 	</div>
+
 </section>

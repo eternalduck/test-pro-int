@@ -1,38 +1,29 @@
 .coffee {
-	@include bg-part($blue, 30%);
+	@include bg-part($blue, 32%);
+	//@include section-padding;//((
 	@include section-padding;
+	@include lg {
+		padding-bottom: 100px;//wtf
+	}
 	&__title {
-		margin-bottom: 40px;
-		@include lg {
-			margin-bottom: 70px;
-		}
+		@include title-margin-mob;
 	}
 	&__slider-container {
-		//@include slider-dim(10%, after, right);
-		outline: 2px solid lime;
+		@include slider-dim;
 		@include content-dependent-margin;
 		position: relative;
 		z-index: 50;
-		height: 890px;
+		height: 950px;//inc $slider-padding
 		@include sm{
-			height: 545px;
+			height: 605px;
 		}
 	}
-	// slider items
-	&__slide {
-		//outline: 2px solid orange;
-		//width: 590px;
-	}
+
 	&__card {//product-card
 		&:first-child {
 			margin-bottom: 32px;
 		}
 	}
-
-	// end slider items
-
-
-
 
 }//products
 

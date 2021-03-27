@@ -107,31 +107,44 @@ $beige: #F9F5E8;
 //================
 // Common elements
 //================
-@mixin shadow{
-	box-shadow: 0 4px 24px rgba(205, 205, 205, 0.5);
-	//filter: drop-shadow(0 4px 24px rgba(205, 205, 205, 0.5));
+$slider-padding: 30px;
+@mixin shadow {
+	box-shadow: 0 4px 24px rgba(205, 205, 205, .5);
+}
+@mixin shadow-small {
+	box-shadow: 1px 0 10px rgba(205, 205, 205, .5);
+}
+@mixin title-margin-mob {
+	margin-bottom: 40px;
 }
 @mixin section-padding {
 	padding-top: 50px;
 	padding-bottom: 70px;
 	@include lg {
-		padding-top: 90px;
-		padding-bottom: 130px;
+		padding-top: 85px;
+		padding-bottom: 120px;
 	}
+}
+@mixin section-padding-mob {
+	padding-top: 50px;
+	padding-bottom: 70px;
+}
+@mixin pseudo {
+	content: "";
+	display: block;
+	position: absolute;
 }
 @mixin bg-part($clr, $width, $pseudo: before, $side: left, $z: 0) {
 	position: relative;
 	&:#{$pseudo} {
-		display: block;
-		content: "";
-		position: absolute;
+		@include pseudo;
 		width: $width;
 		height: 100%;
 		top: 0;
 		#{$side}: 0;
 		background-color: $clr;
 		z-index: $z;
-		max-width: 70px;
+		max-width: 50px;
 		@include md {
 			max-width: none;
 		}
@@ -139,20 +152,27 @@ $beige: #F9F5E8;
 }
 @mixin slider-dim {
 	position: relative;
-	@include md{}
 	&:after {
 		display: block;
 		content: "";
 		position: absolute;
-		width: 0;
 		height: 100%;
 		top: 0;
 		right: 0;
-		background-color: rgba(255,255,255,.5);
+		background: linear-gradient(to right, transparent, rgba(255,255,255,.5));
 		z-index: 10;
-		max-width: 70px;
+		width: 0;
+		@include sm {
+			width: 20%;
+		}
 		@include md {
-			max-width: none;
+			width: 25%;
+		}
+		@include lg {
+			width: 45%;
+		}
+		@include xl {
+			width: 10%;
 		}
 	}
 }

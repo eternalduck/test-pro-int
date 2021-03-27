@@ -9,11 +9,7 @@ const plumber      = require("gulp-plumber")
 const notify       = require("gulp-notify")
 const browsersync  = require("browser-sync")
 const del          = require("del")
-const changed = require("gulp-changed")
-// const reload       = browsersync.reload
-// const cache		 = require("gulp-cached")
-// const sourcemaps   = require("gulp-sourcemaps")
-
+const changed      = require("gulp-changed")
 
 let path = {
 	src: {
@@ -131,7 +127,6 @@ function watchAll() {
 	watch(path.src.fonts, buildFonts)
 }
 
-// const watching = series(watchAll, serverReload)
 const justStart = parallel(watchAll, server, serverReload)
 const build = series(buildHtml, buildCss, buildJs, buildImg, buildFonts, buildLibs)
 const clearAndBuild = series(clear, build)

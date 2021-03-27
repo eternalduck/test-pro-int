@@ -12,26 +12,28 @@
 		display: flex;
 		justify-content: space-between;
 		padding-top: 15px;
-		//padding-right: 30px;
 		@include lg {
 			padding-top: 75px;
 			padding-right: 100px;
 		}
 	}
-	//&__logo {
-	//	margin-left: -15px;//compensate content-width padding
-	//}
 }
+
 .logo {
 	width: 125px;
 	height: 40px;
 }
+
 .cart {
 	background: url("../images/icons/icon-cart.svg") left bottom/24px no-repeat;
 	position: relative;
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
+	@include hover-transition;
+	&:hover {
+		opacity: .85;
+	}
 	&__counter {
 		width: 20px;
 		height: 20px;
@@ -48,6 +50,7 @@
 		z-index: 10;
 	}
 }
+
 .footer {
 	text-align: center;
 	background-color: $light-gray;

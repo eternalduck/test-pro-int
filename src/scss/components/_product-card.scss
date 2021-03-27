@@ -1,9 +1,9 @@
 // Product card
 $max-mob-card-width: 300px;
+
 .product-card {
-	outline: 1px solid blue;
 	@include shadow;
-	background-color: $almost-white;
+	background-color: #fff;
 	display: flex;
 
 	&_default {
@@ -32,15 +32,52 @@ $max-mob-card-width: 300px;
 		@include sm {
 			max-width: 360px;
 		}
-		//@include xl {
-		//	max-width: 360px;
-		//}
 	}//_vertical
 	&_big {
+		background-color: transparent;
+		box-shadow: none;
 		flex-direction: column;
 		@include lg {
 			flex-direction: row;
 		}
+		.product-card__image {
+			z-index: 20;
+		}
+		.product-card__description {//override
+			@include shadow-small;
+			background-color: #fff;
+			position: relative;
+			@include lg {
+				box-shadow: none;
+				padding: 60px 50px 50px 62px;
+				&:before {//white bg part
+					@include pseudo;
+					background-color: #fff;
+					top: 0;
+					left: -150px;
+					height: 100%;
+					width: 150px;
+					z-index: 0;
+					@include lg {
+						width: 235px;
+						left: -235px;
+					}
+				}
+				&:after {//shadow
+					@include pseudo;
+					top: 0;
+					left: -150px;
+					height: 100%;
+					width: calc(100% + 150px);
+					z-index: -1;
+					@include shadow-small;
+					@include lg {
+						width: calc(100% + 235px);
+						left: -235px;
+					}
+				}
+			}//lg
+		}//_big description
 	}//_big
 
 	&__image {//main point of card's width/height
@@ -77,21 +114,14 @@ $max-mob-card-width: 300px;
 			@include md {
 				width: 360px;
 			}
-			//@include xl {
-			//	width: 360px;
-			//}
 		}//vertical img
 		.product-card_big & {
 			flex: 0 0 300px;
-			//width: 300px;
-			//height: 282px;
 			@include lg {
 				flex: 0 0 400px;
 			}
 			@include xl {
 				flex: 0 0 490px;
-				//width: 490px;
-				//height: 460px;
 			}
 			img {//override
 				object-fit: contain;
@@ -103,7 +133,7 @@ $max-mob-card-width: 300px;
 				}
 			}
 		}//big img
-	}//image
+	}//__image
 
 	&__description {
 		flex: 1;
@@ -122,7 +152,7 @@ $max-mob-card-width: 300px;
 				padding: 40px 30px 40px 40px;
 			}
 		}
-	}//description
+	}//__description
 
 	&__price-container {
 		display: flex;
@@ -161,10 +191,12 @@ $max-mob-card-width: 300px;
 		margin-top: 25px;
 	}
 	&__specs-item {
-		outline: 1px dotted;
 		flex: 1;
 		display: flex;
 		align-items: center;
+		&:last-child{
+			padding-left: 80px;
+		}
 	}
 	&__specs-icon {
 		margin-right: 15px;
@@ -174,7 +206,6 @@ $max-mob-card-width: 300px;
 	}
 
 	&__footer {
-		outline: 1px dotted;
 		margin-top: 32px;
 		display: flex;
 		align-items: center;
@@ -190,12 +221,22 @@ $max-mob-card-width: 300px;
 			margin-left: 62px;
 		}
 		.product-card_big & {
-			margin-left: 120px;
+			margin-left: 70px;
+			@include xl {
+				margin-left: 120px;
+			}
 		}
 	}
 
-	&__specs {
-
-	}
-
 }//product-card
+
+
+// fix for a slider
+.product-card {
+	.splide__slide & {
+		box-shadow: none;
+	}
+	.splide__slide.is-visible & {
+		@include shadow;
+	}
+}

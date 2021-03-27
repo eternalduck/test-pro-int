@@ -91,9 +91,9 @@ document.addEventListener( "DOMContentLoaded", function () {
 					tabs.forEach(tab => tab.classList.remove(tabActiveClass))
 					// add active class to the corresponding tab
 					tabsContainer.querySelector(`.tabset__tab[data-tab='${control.dataset.link}']`).classList.add(tabActiveClass)
-				})//click
+				})
 
-			})//forEach
+			})
 		}//tabsNavigation
 
 	}//if tabset

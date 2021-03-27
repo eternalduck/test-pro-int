@@ -1,23 +1,29 @@
 .giftset {
-	@include section-padding;
-	@include bg-part($almost-white, 30%, right);
+	@include bg-part($almost-white, 30%, before, right);
 	background-color: $light-gray;
+	@include section-padding;
+	@include lg {
+		padding-bottom: 130px;//wtf
+	}
 
 	&__title {
-		margin-bottom: 40px;
+		@include title-margin-mob;
 		@include lg {
 			margin-bottom: 65px;
 		}
 	}
+
 	&__tabs-container {
 		position: relative;
 		z-index: 50;
-		height: 700px;
+		height: 750px;
 		@include lg {
 			height: 460px;
 		}
 	}
+
 	&__card {//product-card
 		height: 100%;
 	}
+
 }
