@@ -12,9 +12,12 @@
 		display: flex;
 		justify-content: space-between;
 		padding-top: 15px;
-		@include lg {
+		@include xl {
 			padding-top: 75px;
 			padding-right: 100px;
+		}
+		@include xxl {
+			padding-right: 10px;
 		}
 	}
 }
