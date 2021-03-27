@@ -107,7 +107,6 @@ $beige: #F9F5E8;
 //================
 // Common elements
 //================
-$slider-padding: 30px;
 @mixin shadow {
 	box-shadow: 0 4px 24px rgba(205, 205, 205, .5);
 }
@@ -150,14 +149,15 @@ $slider-padding: 30px;
 		}
 	}
 }
+$slider-padding: 30px;
 @mixin slider-dim {
 	position: relative;
 	&:after {
 		display: block;
 		content: "";
 		position: absolute;
-		height: 100%;
-		top: 0;
+		height: calc(100% - 42px);
+		top: $slider-padding;
 		right: 0;
 		background: linear-gradient(to right, transparent, rgba(255,255,255,.5));
 		z-index: 10;
